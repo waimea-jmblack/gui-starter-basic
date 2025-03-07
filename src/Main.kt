@@ -33,6 +33,7 @@ class MainWindow : JFrame(), ActionListener {
     // Fields to hold the UI elements
     private lateinit var greetingLabel: JLabel
     private lateinit var helloButton: JButton
+    private lateinit var goodbyeButton: JButton
 
     /**
      * Configure the UI and display it
