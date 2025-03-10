@@ -31,9 +31,21 @@ fun main() {
 class MainWindow : JFrame(), ActionListener {
 
     // Fields to hold the UI elements
-    private lateinit var greetingLabel: JLabel
-    private lateinit var helloButton: JButton
-    private lateinit var goodbyeButton: JButton
+
+    //Red=Changer============================================================================
+    private lateinit var redText: JTextField
+    private lateinit var redButtonUp: JButton
+    private lateinit var redButtonDown: JButton
+
+    //Green=Changer==========================================================================
+    private lateinit var greenText: JTextField
+    private lateinit var greenButtonUp: JButton
+    private lateinit var greenButtonDown: JButton
+
+    //Blue=Changer===========================================================================
+    private lateinit var blueText: JTextField
+    private lateinit var blueButtonUp: JButton
+    private lateinit var blueButtonDown: JButton
 
     /**
      * Configure the UI and display it
@@ -65,17 +77,62 @@ class MainWindow : JFrame(), ActionListener {
     private fun addControls() {
         val defaultFont = Font(Font.SANS_SERIF, Font.PLAIN, 30)
 
-        greetingLabel = JLabel("Hello, World!")
-        greetingLabel.horizontalAlignment = SwingConstants.CENTER
-        greetingLabel.bounds = Rectangle(50, 50, 500, 100)
-        greetingLabel.font = defaultFont
-        add(greetingLabel)
+        //Red=RGB=Changer============================================================================
 
-        helloButton = JButton("Click Me!")
-        helloButton.bounds = Rectangle(50,200,500,100)
-        helloButton.font = defaultFont
-        helloButton.addActionListener(this)     // Handle any clicks
-        add(helloButton)
+        redText = JTextField("000")
+        redText.bounds = Rectangle(50, 200, 500, 100)
+        redText.addActionListener(this)
+        redText.font= defaultFont
+//        redText.addKeyListener(this)
+        add(redText)
+
+        redButtonUp = JButton("+")
+        redButtonUp.bounds = Rectangle(50, 350, 225, 100)
+        redButtonUp.addActionListener(this)     // Handle any clicks
+        add(redButtonUp)
+
+        redButtonDown = JButton("-")
+        redButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        redButtonDown.addActionListener(this)     // Handle any clicks
+        add(redButtonDown)
+
+        //Green=RGB=Changer==========================================================================
+
+        greenText = JTextField("000")
+        greenText.bounds = Rectangle(50, 200, 500, 100)
+        greenText.addActionListener(this)
+        greenText.font = defaultFont
+//        greenText.addKeyListener(this)
+        add(greenText)
+
+        greenButtonUp = JButton("+")
+        greenButtonUp.bounds = Rectangle(325, 350, 225, 100)
+        greenButtonUp.addActionListener(this)
+        add(greenButtonUp)
+
+        greenButtonDown = JButton("-")
+        greenButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        greenButtonDown.addActionListener(this)     // Handle any clicks
+        add(greenButtonDown)
+
+        //Blue=RGB=Changer===========================================================================
+
+        blueText = JTextField("000")
+        blueText.bounds = Rectangle(50, 200, 500, 100)
+        blueText.addActionListener(this)
+        blueText.font= defaultFont
+//        blueText.addKeyListener(this)
+        add(blueText)
+
+        blueButtonUp = JButton("+")
+        blueButtonUp.bounds = Rectangle(50, 350, 225, 100)
+        blueButtonUp.addActionListener(this)     // Handle any clicks
+        add(blueButtonUp)
+
+        blueButtonDown = JButton("-")
+        blueButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        blueButtonDown.addActionListener(this)     // Handle any clicks
+        add(blueButtonDown)
     }
 
 
@@ -84,8 +141,8 @@ class MainWindow : JFrame(), ActionListener {
      */
     override fun actionPerformed(e: ActionEvent?) {
         when (e?.source) {
-            helloButton -> {
-                greetingLabel.text = "You clicked the button!"
+            redButtonUp -> {
+
             }
         }
     }
