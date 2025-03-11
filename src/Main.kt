@@ -31,6 +31,9 @@ fun main() {
 class MainWindow : JFrame(), ActionListener {
 
     // Fields to hold the UI elements
+    
+    //Colour=Display=Modular=================================================================
+    private lateinit var colourDisplayLabel: JButton
 
     //Red=Changer============================================================================
     private lateinit var redText: JTextField
@@ -77,60 +80,65 @@ class MainWindow : JFrame(), ActionListener {
     private fun addControls() {
         val defaultFont = Font(Font.SANS_SERIF, Font.PLAIN, 30)
 
+        colourDisplayLabel = JButton("Colour Display")
+        colourDisplayLabel.horizontalAlignment = SwingConstants.CENTER
+        colourDisplayLabel.bounds = Rectangle(100, 50, 160, 110)
+        add(colourDisplayLabel)
+
         //Red=RGB=Changer============================================================================
 
-        redText = JTextField("000")
-        redText.bounds = Rectangle(50, 200, 500, 100)
+        redText = JTextField("000 R")
+        redText.bounds = Rectangle(100, 200, 100, 110)
         redText.addActionListener(this)
         redText.font= defaultFont
 //        redText.addKeyListener(this)
         add(redText)
 
         redButtonUp = JButton("+")
-        redButtonUp.bounds = Rectangle(50, 350, 225, 100)
+        redButtonUp.bounds = Rectangle(210, 200, 50,50)
         redButtonUp.addActionListener(this)     // Handle any clicks
         add(redButtonUp)
 
         redButtonDown = JButton("-")
-        redButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        redButtonDown.bounds = Rectangle(210, 260, 50,50)
         redButtonDown.addActionListener(this)     // Handle any clicks
         add(redButtonDown)
 
         //Green=RGB=Changer==========================================================================
 
-        greenText = JTextField("000")
-        greenText.bounds = Rectangle(50, 200, 500, 100)
+        greenText = JTextField("000 G")
+        greenText.bounds = Rectangle(300, 200, 100, 110)
         greenText.addActionListener(this)
         greenText.font = defaultFont
 //        greenText.addKeyListener(this)
         add(greenText)
 
         greenButtonUp = JButton("+")
-        greenButtonUp.bounds = Rectangle(325, 350, 225, 100)
+        greenButtonUp.bounds = Rectangle(410, 200, 50,50)
         greenButtonUp.addActionListener(this)
         add(greenButtonUp)
 
         greenButtonDown = JButton("-")
-        greenButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        greenButtonDown.bounds = Rectangle(410, 260, 50,50)
         greenButtonDown.addActionListener(this)     // Handle any clicks
         add(greenButtonDown)
 
         //Blue=RGB=Changer===========================================================================
 
-        blueText = JTextField("000")
-        blueText.bounds = Rectangle(50, 200, 500, 100)
+        blueText = JTextField("000 B")
+        blueText.bounds = Rectangle(300, 50, 100, 110)
         blueText.addActionListener(this)
         blueText.font= defaultFont
 //        blueText.addKeyListener(this)
         add(blueText)
 
         blueButtonUp = JButton("+")
-        blueButtonUp.bounds = Rectangle(50, 350, 225, 100)
+        blueButtonUp.bounds = Rectangle(410, 50, 50,50)
         blueButtonUp.addActionListener(this)     // Handle any clicks
         add(blueButtonUp)
 
         blueButtonDown = JButton("-")
-        blueButtonDown.bounds = Rectangle(50, 350, 225, 100)
+        blueButtonDown.bounds = Rectangle(410, 110, 50,50)
         blueButtonDown.addActionListener(this)     // Handle any clicks
         add(blueButtonDown)
     }
